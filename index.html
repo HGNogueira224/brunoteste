@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conserto de Placas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Conserto de Placas de Geladeira</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrarAba('inicio')">Início</a></li>
+        <li><a href="#" onclick="mostrarAba('orcamentos')">Orçamentos</a></li>
+      </ul>
+      <div id="lojaBox">
+        <select id="lojaSelector" class="estilo-seletor">
+          <option value="loja1">Nilópolis - Centro</option>
+          <option value="loja2">Engº Pedreira - Bairro</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="aba ativa">
+      <h2>Sobre o nosso trabalho</h2>
+      <div class="fotos-trabalho">
+        <img src="imgs/trabalho1.jpg" alt="Reparo de placa" />
+        <img src="imgs/trabalho1.jpg" alt="Solda eletrônica" />
+      </div>
+      <p>Somos especialistas em conserto de placas de geladeira das principais marcas do mercado. Trabalhamos com equipamentos de qualidade e técnicos experientes para garantir o melhor resultado possível no reparo de sua placa.</p>
+      <h3>Nossos endereços</h3>
+      <ul>
+        <li><strong>Nilópolis:</strong> Rua Nilópolis 123 - Centro, RJ - RJ</li>
+        <li><strong>Engº Pedreira:</strong> Rua Engº Pedreira 456 - Centro, RJ - RJ</li>
+      </ul>
+    </section>
+
+    <section id="orcamentos" class="aba">
+      <h2>Modelos e Preços</h2>
+      <div class="placas-container">
+        <div class="placa">
+            <a href="produto.html?produto=placa1">
+            <img src="imgs/placa1.jpg" alt="Placa Consul 127v">
+            <p>Placa Consul 127v</p>
+            <p>R$ 150,00</p>
+            </a>
+        </div>
+
+        <div class="placa">
+            <a href="produto.html?produto=placa2">
+            <img src="imgs/placa1.jpg" alt="Placa Brastemp 220v">
+            <p>Placa Brastemp 220v</p>
+            <p>R$ 180,00</p>
+            </a>
+        </div>
+    </div>
+  <footer>
+    <p>&copy; 2025 Conserto de Placas - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

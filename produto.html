@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes da Placa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Detalhes do Produto</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" onclick="mostrarAba('inicio')">Início</a></li>
+      </ul>
+      <select id="lojaSelector">
+        <option value="loja1">Nilópolis - Centro</option>
+        <option value="loja2">Engº Pedreira - Bairro</option>
+      </select>
+    </nav>
+  </header>
+
+  <main>
+    <div class="detalhe-produto-container">
+      <div class="produto-imagem" id="produtoImagem"></div>
+
+      <div class="produto-info">
+        <div id="produtoTexto"></div>
+
+        <div class="frete-formulario compacto">
+          <h4>Calcular frete</h4>
+          <input type="text" id="cepDestino" placeholder="Digite seu CEP" />
+          <button onclick="calcularFreteCorreios()">Correios</button>
+          <button onclick="calcularFreteUber()">Uber</button>
+          <p style="font-size: 14px; margin-top: 5px;">
+            Endereço da loja: <strong id="enderecoUber"></strong>
+          </p>
+          <div id="resultadoFrete"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Conserto de Placas</p>
+  </footer>
+
+  <script>
+    const produtos = {
+      placa1: {
+        nome: "Placa Consul 127v",
+        preco: "R$ 150,00",
+        imagem: "imgs/placa1.jpg"
+      },
+      placa2: {
+        nome: "Placa Brastemp 220v",
+        preco: "R$ 180,00",
+        imagem: "imgs/placa1.jpg"
+      }
+    };
+
+    function carregarProduto() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const produtoId = urlParams.get('produto');
+      const produto = produtos[produtoId];
+
+      if (produto) {
+        document.getElementById("produtoImagem").innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" />
+        `;
+        document.getElementById("produtoTexto").innerHTML = `
+          <h2>${produto.nome}</h2>
+          <p><strong>Preço:</strong> ${produto.preco}</p>
+        `;
+      } else {
+        document.getElementById("produtoImagem").innerHTML = ``;
+        document.getElementById("produtoTexto").innerHTML = `<p>Produto não encontrado.</p>`;
+      }
+    }
+
+    function calcularFreteCorreios() {
+      const cepDestino = document.getElementById("cepDestino").value.replace(/\D/g, "");
+      const lojaSelecionada = document.getElementById("lojaSelector").value;
+      const cepOrigem = lojaSelecionada === "loja1" ? "20720000" : "26445310";
+
+      if (!cepDestino || cepDestino.length !== 8) {
+        alert("Digite um CEP válido com 8 números.");
+        return;
+      }
+
+      const origemPrefix = parseInt(cepOrigem.substring(0, 5));
+      const destinoPrefix = parseInt(cepDestino.substring(0, 5));
+      const diff = Math.abs(origemPrefix - destinoPrefix);
+
+      let valor = 0;
+      let prazo = 0;
+
+      if (diff <= 100) {
+        valor = 20;
+        prazo = 3;
+      } else if (diff <= 400) {
+        valor = 30;
+        prazo = 5;
+      } else {
+        valor = 45;
+        prazo = 7;
+      }
+
+      document.getElementById("resultadoFrete").innerHTML =
+        `<p><strong>Valor estimado do frete (PAC):</strong> R$ ${valor.toFixed(2)}</p>
+         <p><strong>Prazo estimado de entrega:</strong> ${prazo} dias úteis</p>`;
+    }
+
+    function calcularFreteUber() {
+      window.open("https://www.uber.com/br/pt/price-estimate/", "_blank");
+    }
+
+    function atualizarEnderecoUber() {
+      const lojaSelecionada = document.getElementById("lojaSelector").value;
+      const endereco = lojaSelecionada === "loja1"
+        ? "Rua Nilópolis 123, Nilópolis - RJ"
+        : "Rua Engº Pedreira 456, RJ";
+
+      document.getElementById("enderecoUber").textContent = endereco;
+    }
+
+    window.onload = () => {
+      carregarProduto();
+      atualizarEnderecoUber();
+      document.getElementById("lojaSelector").addEventListener("change", atualizarEnderecoUber);
+    };
+  </script>
+</body>
+</html>

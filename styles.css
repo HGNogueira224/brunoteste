@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #0a1a2f;
-  color: #f0f0f0;
+  background-color: #ffffff; /* Corpo branco */
+  color: #222222; /* Texto escuro para contraste */
 }
 
 header {
-  background-color: #071423;
+  background-color: #000000; /* Preto */
   padding: 20px;
   text-align: center;
 }
@@ -46,8 +46,8 @@ nav ul li a:hover {
 }
 
 .estilo-seletor {
-  background-color: #112544;
-  color: #f0f0f0;
+  background-color: #1c1c1c;
+  color: #ffffff;
   border: 1px solid #48a9f8;
   border-radius: 8px;
   padding: 8px 12px;
@@ -59,7 +59,7 @@ nav ul li a:hover {
 .estilo-seletor:focus {
   outline: none;
   border-color: #73c2ff;
-  background-color: #0f1f38;
+  background-color: #2a2a2a;
 }
 
 .estilo-seletor:hover {
@@ -84,16 +84,29 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .fotos-trabalho img {
-  width: 300px;
+  width: 400px;
+  border-radius: 10px;
+}
+.item-trabalho {
+  max-width: 400px;
+}
+.item-trabalho img {
+  width: 100%;
   border-radius: 10px;
 }
 
+.item-trabalho p {
+  font-size: 20px;
+  margin-top: 8px;
+  color: #333; /* ajuste conforme o fundo, se for escuro, use #fff */
+}
 h2, h3, h4 {
-  color: #48a9f8;
+  color: #0055aa;
   text-align: center;
 }
 
@@ -112,11 +125,12 @@ ul {
 }
 
 .placa {
-  background-color: #112544;
+  background-color: #f4faff;
   padding: 15px;
   border-radius: 10px;
-  width: 200px;
+  width: 300px;
   text-align: center;
+  border: 1px solid #cce6ff;
 }
 
 .placa img {
@@ -140,19 +154,19 @@ ul {
 
 .placa a {
   text-decoration: none;
-  color: #f0f0f0;
+  color: #222222;
 }
 
 .placa a:visited {
-  color: #f0f0f0;
+  color: #222222;
 }
 
 .placa a:hover {
-  color: #48a9f8;
+  color: #0055aa;
 }
 
 footer {
-  background-color: #071423;
+  background-color: #000000; /* Preto */
   text-align: center;
   padding: 15px;
   color: #888;
@@ -178,21 +192,22 @@ footer {
   flex: 1;
   min-width: 280px;
   max-width: 500px;
-  color: #f0f0f0;
+  color: #222222;
 }
 
 .produto-info h2 {
   margin-top: 0;
-  color: #48a9f8;
+  color: #0055aa;
 }
 
 /* Estilo frete compacto */
 .frete-formulario.compacto {
-  background-color: #112544;
+  background-color: #f4faff;
   padding: 15px;
   border-radius: 10px;
   margin-top: 20px;
   text-align: left;
+  border: 1px solid #cce6ff;
 }
 
 .frete-formulario.compacto input {
@@ -200,7 +215,7 @@ footer {
   padding: 6px;
   font-size: 14px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
@@ -221,10 +236,9 @@ footer {
 
 #resultadoFrete {
   margin-top: 10px;
-  color: #ffffff;
+  color: #000;
 }
 
-/* Página produto antiga (se ainda usar em algo) */
 .produto-detalhe {
   text-align: center;
   margin-bottom: 30px;
@@ -234,4 +248,46 @@ footer {
   width: 300px;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+.galeria-itens {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.item {
+  text-align: center;
+  width: 200px;
+  background-color: #e6f0fa;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item p {
+  margin-top: 8px;
+  color: #0a1a2f; /* azul escuro que combina com o tema */
+  font-weight: bold;
+}
+.galeria-itens .item img {
+  width: 200px;        /* Largura padrão */
+  height: 200px;        /* Altura padrão */
+  object-fit: contain; /* Garante que a imagem se encaixe sem distorcer */
+  margin-bottom: 8px;
+}
+.cabecalho-arredondado {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

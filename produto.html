@@ -13,9 +13,9 @@
       <ul>
         <li><a href="index.html" onclick="mostrarAba('inicio')">Início</a></li>
       </ul>
-      <select id="lojaSelector">
-        <option value="loja1">Nilópolis - Centro</option>
-        <option value="loja2">Engº Pedreira - Bairro</option>
+      <select id="lojaSelector" class="estilo-seletor">
+        <option value="loja1">Cascadura - Av. Ernani Cardoso 91</option>
+        <option value="loja2">Engº Pedreira - Rua Itororó 22, Teófilo Cunha</option>
       </select>
     </nav>
   </header>
@@ -48,15 +48,55 @@
   <script>
     const produtos = {
       placa1: {
-        nome: "Placa Consul 127v",
-        preco: "R$ 150,00",
-        imagem: "imgs/placa1.jpg"
+        nome: "Placa Samsung ww10J",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/ww10J.jpg"
       },
       placa2: {
-        nome: "Placa Brastemp 220v",
-        preco: "R$ 180,00",
-        imagem: "imgs/placa1.jpg"
-      }
+        nome: "Placa Samsung wf106",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wf106.png"
+      },
+      placa3: {
+        nome: "Placa Samsung ww11k",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/ww11k.jpg"
+      },
+      placa4: {
+        nome: "Placa Lava e seca Samsung wd11m",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wd11m.jpg"
+      },
+      placa5: {
+        nome: "Placa Lava e seca Samsung wd106",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wd106.jpg"
+      },
+      placa6: {
+        nome: "Placa Lava e seca Samsung wd136",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wd136.jpg"
+      },
+      placa7: {
+        nome: "Placa Lava e seca Samsung wd856",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wd856.webp"
+      },
+      placa8: {
+        nome: "Placa Lava e seca Samsung wd854",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wd854.webp"
+      },
+      placa9: {
+        nome: "Placa Lava e seca Samsung wd11j",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wd11j.webp"
+      },
+      placa10: {
+        nome: "Placa Lava e seca Samsung wd10n",
+        preco: "Orçamento via Whatsapp",
+        imagem: "imgs/wd10n.webp"
+      },
     };
 
     function carregarProduto() {
@@ -81,7 +121,7 @@
     function calcularFreteCorreios() {
       const cepDestino = document.getElementById("cepDestino").value.replace(/\D/g, "");
       const lojaSelecionada = document.getElementById("lojaSelector").value;
-      const cepOrigem = lojaSelecionada === "loja1" ? "20720000" : "26445310";
+      const cepOrigem = lojaSelecionada === "loja1" ? "21310310" : "26450055";
 
       if (!cepDestino || cepDestino.length !== 8) {
         alert("Digite um CEP válido com 8 números.");
@@ -118,8 +158,8 @@
     function atualizarEnderecoUber() {
       const lojaSelecionada = document.getElementById("lojaSelector").value;
       const endereco = lojaSelecionada === "loja1"
-        ? "Rua Nilópolis 123, Nilópolis - RJ"
-        : "Rua Engº Pedreira 456, RJ";
+        ? "Av. Ernani Cardoso 91, Cascadura - RJ"
+        : "Rua Itororó 22, Teófilo Cunha - RJ";
 
       document.getElementById("enderecoUber").textContent = endereco;
     }

@@ -40,7 +40,7 @@
       </select>
     </div>
 
-    <div class="placas-container" id="placasArCondicionado">
+    <div class="placas-container" id="placasgeladeiras">
       <div class="placa samsung">
         <a href="produto.html?produto=placa1">
           <img src="imgs/arcond_samsung1.jpg" alt="Samsung">
@@ -72,5 +72,19 @@
     <p>Engº Pedreira - Rua Itororó 22, Teófilo Cunha - RJ</p>
     <p>&copy; 2025 Bruno Placas - Todos os direitos reservados.</p>
   </footer>
+<script>
+  function filtrarPlacas() {
+    const filtro = document.getElementById('filtroMarca').value;
+    const placas = document.querySelectorAll('#placasgeladeiras .placa');
+
+    placas.forEach(placa => {
+      if (filtro === 'todos') {
+        placa.style.display = 'block';
+      } else {
+        placa.style.display = placa.classList.contains(filtro) ? 'block' : 'none';
+      }
+    });
+  }
+</script>
 </body>
 </html>

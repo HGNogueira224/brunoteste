@@ -318,10 +318,31 @@ footer {
     gap: 10px;
   }
 
-  .estilo-seletor {
-    margin-left: 0;
-    margin-top: 10px;
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  #lojaBox {
     width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .estilo-seletor {
+    margin: 10px 0 0 0;
+    width: 90%;
+  }
+
+  #filtroMarca,
+  #filtroTipo {
+    width: 90%;
+    font-size: 15px;
+    margin: 5px auto;
+    display: block;
+  }
+
+  main {
+    padding: 10px;
   }
 
   .fotos-trabalho img,
@@ -335,6 +356,7 @@ footer {
   .galeria-itens {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
 
   .galeria-itens .item {
@@ -359,6 +381,7 @@ footer {
   .detalhe-produto-container {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
   }
 
   .produto-info {
@@ -376,9 +399,5 @@ footer {
 
   h2, h3, h4 {
     font-size: 18px;
-  }
-
-  nav ul li a {
-    font-size: 16px;
   }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bruno Placas - Categorias</title>
+  <title>Bruno Placas - Ar Condicionado</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -30,33 +30,39 @@
         <option value="samsung">Samsung</option>
         <option value="electrolux">Electrolux</option>
         <option value="lg">LG</option>
-        <!-- Adicione mais marcas se quiser -->
+      </select>
+
+      <label for="filtroTipo" style="margin-left: 20px;">Filtrar por tipo:</label>
+      <select id="filtroTipo" onchange="filtrarPlacas()">
+        <option value="todos">Todos</option>
+        <option value="placa">Inverter</option>
+        <option value="display">HW</option>
       </select>
     </div>
 
     <div class="placas-container" id="placasArCondicionado">
-      <div class="placa samsung">
+      <div class="placa samsung placa">
         <a href="produto.html?produto=placa1">
           <img src="imgs/arcond_samsung1.jpg" alt="Samsung">
           <p>Placa Ar Samsung 9000 BTUs</p>
           <p>Calcular Frete</p>
         </a>
       </div>
-      <div class="placa electrolux">
+      <div class="placa electrolux display">
         <a href="produto.html?produto=placa2">
           <img src="imgs/arcond_electrolux1.jpg" alt="Electrolux">
-          <p>Placa Ar Electrolux EcoTurbo</p>
+          <p>Display Ar Electrolux EcoTurbo</p>
           <p>Calcular Frete</p>
         </a>
       </div>
-      <div class="placa lg">
+      <div class="placa lg placa">
         <a href="produto.html?produto=placa3">
           <img src="imgs/arcond_lg1.jpg" alt="LG">
           <p>Placa Ar LG Dual Inverter</p>
           <p>Calcular Frete</p>
         </a>
       </div>
-      <!-- Adicione mais blocos com as classes correspondentes -->
+      <!-- Adicione mais blocos com as classes corretas -->
     </div>
   </main>
 
@@ -67,19 +73,19 @@
     <p>&copy; 2025 Bruno Placas - Todos os direitos reservados.</p>
   </footer>
 
-<script>
-  function filtrarPlacas() {
-    const filtro = document.getElementById('filtroMarca').value;
-    const placas = document.querySelectorAll('#placasArCondicionado .placa');
+  <script>
+    function filtrarPlacas() {
+      const marcaSelecionada = document.getElementById('filtroMarca').value;
+      const tipoSelecionado = document.getElementById('filtroTipo').value;
+      const placas = document.querySelectorAll('#placasArCondicionado .placa');
 
-    placas.forEach(placa => {
-      if (filtro === 'todos') {
-        placa.style.display = 'block';
-      } else {
-        placa.style.display = placa.classList.contains(filtro) ? 'block' : 'none';
-      }
-    });
-  }
-</script>
+      placas.forEach(placa => {
+        const temMarca = marcaSelecionada === 'todos' || placa.classList.contains(marcaSelecionada);
+        const temTipo = tipoSelecionado === 'todos' || placa.classList.contains(tipoSelecionado);
+
+        placa.style.display = temMarca && temTipo ? 'block' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>

@@ -8,75 +8,48 @@
 </head>
 <body>
   <header class="cabecalho-arredondado">
-  <h1>Reparo de placas</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html" onclick="mostrarAba('inicio')">Início</a></li>
-      <li><a href="#" onclick="mostrarAba('orcamentos')">Orçamentos</a></li>
-    </ul>
-  </nav>
-</header>
+    <h1>Reparo de placas</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" onclick="mostrarAba('inicio')">Início</a></li>
+        <li><a href="geladeiras.html" onclick="mostrarAba('geladeiras')">Geladeiras</a></li>
+        <li><a href="arcondicionado.html" onclick="mostrarAba('arcondicionado')">Ar Condicionado</a></li>
+        <li><a href="lavaeseca.html" onclick="mostrarAba('lavaeseca')">Lava e Seca</a></li>
+        <li><a href="maqlavar.html" onclick="mostrarAba('maqlavar')">Máquina de Lavar</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
     <section id="inicio" class="aba ativa">
-      <h3>Eletrodomésticos que trabalhamos</h3>
+      <h3>Categorias de Eletrodomésticos</h3>
       <div class="galeria-itens">
         <div class="item">
-          <img src="imgs/geladeira.jpg" alt="Geladeira" />
-          <p>Geladeiras</p>
+          <a href="geladeiras.html" onclick="mostrarCategoria('geladeira')">
+            <img src="imgs/geladeira.jpg" alt="Geladeira" />
+            <p>Geladeiras</p>
+          </a>
         </div>
         <div class="item">
-          <img src="imgs/Arcondicionado.png" alt="ArCondicionado" />
-          <p>Ar Condicionado (Sprinter/Janela)</p>
+          <a href="arcondicionado.html" onclick="mostrarCategoria('arcondicionado')">
+            <img src="imgs/Arcondicionado.png" alt="Ar Condicionado" />
+            <p>Ar Condicionado</p>
+          </a>
         </div>
         <div class="item">
-          <img src="imgs/lavaeseca.jpg" alt="Lava e Seca" />
-          <p>Lava e Seca</p>
+          <a href="lavaeseca.html" onclick="mostrarCategoria('lavaeseca')">
+            <img src="imgs/lavaeseca.jpg" alt="Lava e Seca" />
+            <p>Lava e Seca</p>
+          </a>
         </div>
         <div class="item">
-          <img src="imgs/maqdelavar.jpg" alt="maqdelavar" />
-          <p>Máquia de Lavar Roupas</p>
+          <a href="maqlavar.html" onclick="mostrarCategoria('maqlavar')">
+            <img src="imgs/maqdelavar.jpg" alt="Máquina de Lavar" />
+            <p>Máquina de Lavar</p>
+          </a>
         </div>
       </div>
 
-      <h3>Marcas que atendemos</h3>
-      <div class="galeria-itens">
-        <div class="item">
-          <img src="imgs/consul.png" alt="Consul" />
-          <p>Consul</p>
-        </div>
-        <div class="item">
-          <img src="imgs/brastemp.png" alt="Brastemp" />
-          <p>Brastemp</p>
-        </div>
-        <div class="item">
-          <img src="imgs/electrolux.png" alt="Electrolux" />
-          <p>Electrolux</p>
-        </div>
-        <div class="item">
-          <img src="imgs/LG.png" alt="LG" />
-          <p>LG</p>
-        </div>
-        <div class="item">
-          <img src="imgs/samsung.png" alt="Samsung" />
-          <p>Samsung</p>
-        </div>
-        <div class="item">
-          <img src="imgs/midea.png" alt="midea" />
-          <p>Midea</p>
-        </div>
-        <div class="item">
-          <img src="imgs/agratto.png" alt="agratto" />
-          <p>Agratto</p>
-        </div>
-        <div class="item">
-          <img src="imgs/hisense.png" alt="hisense" />
-          <p>Hisense</p>
-        </div>
-        <div class="item">
-          <img src="imgs/philco.png" alt="philco" />
-          <p>Philco</p>
-        </div>
-      </div>
       <h3>Nosso trabalho</h3>
       <div class="fotos-trabalho">
         <div class="item-trabalho">
@@ -95,87 +68,22 @@
           <img src="imgs/whatsapp.png" alt="Fale conosco no WhatsApp" style="width: 60px; height: auto;">
         </a>
       </div>
-      <h3>Nossos endereços</h3>
-      <ul>
-        <li><strong>Cascadura:</strong> Av. Ernani Cardoso 91, Cascadura - RJ</li>
-        <li><strong>Engº Pedreira:</strong> Rua Itororó 22, Teófilo Cunha - RJ</li>
-        <p>&copy; 2025 Bruno Placas - Todos os direitos reservados.</p>
-      </ul>
     </section>
-    <section id="orcamentos" class="aba">
-      <h2>Modelos e Preços</h2>
-      <div class="placas-container">
-        <div class="placa">
-            <a href="produto.html?produto=placa1">
-            <img src="imgs/ww10J.jpg" alt="Placa Samsung ww10J">
-            <p>Placa Lavadoras Samsung ww10J</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa2">
-            <img src="imgs/wf106.png" alt="Placa Samsung wf106">
-            <p>Placa Lavadoras Samsung wf106</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa3">
-            <img src="imgs/ww11k.jpg" alt="Placa Samsung ww11k">
-            <p>Placa Lavadoras Samsung ww11k</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa4">
-            <img src="imgs/wd11m.jpg" alt="Placa Samsung wd11m">
-            <p>Placa Lava e seca Samsung wd11m</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa5">
-            <img src="imgs/wd106.jpg" alt="Placa Samsung wd106">
-            <p>Placa Lava e seca Samsung wd106</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa6">
-            <img src="imgs/wd136.jpg" alt="Placa Samsung wd136">
-            <p>Placa Lava e seca Samsung wd136</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa7">
-            <img src="imgs/wd856.webp" alt="Placa Samsung wd856">
-            <p>Placa Lava e seca Samsung wd856</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa8">
-            <img src="imgs/wd854.webp" alt="Placa Samsung wd854">
-            <p>Placa Lava e seca Samsung wd854</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa9">
-            <img src="imgs/wd11j.webp" alt="Placa Samsung wd11j">
-            <p>Placa Lava e seca Samsung wd11j</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-        <div class="placa">
-            <a href="produto.html?produto=placa10">
-            <img src="imgs/wd10n.webp" alt="Placa Samsung wd10n">
-            <p>Placa Lava e seca Samsung wd10n</p>
-            <p>Calcular Frete</p>
-            </a>
-        </div>
-    </div>
-  <script src="script.js"></script>
+  </main>
+
+  <footer>
+    <p><strong>Endereços:</strong></p>
+    <p>Cascadura - Av. Ernani Cardoso 91, Cascadura - RJ</p>
+    <p>Engº Pedreira - Rua Itororó 22, Teófilo Cunha - RJ</p>
+    <p>&copy; 2025 Bruno Placas - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function mostrarCategoria(id) {
+      document.querySelectorAll('.categoria-placas').forEach(div => div.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>

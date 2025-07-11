@@ -8,7 +8,9 @@
 </head>
 <body>
   <header class="cabecalho-arredondado">
-    <h1>Reparo de placas</h1>
+    <div class="logo-container">
+      <img src="imgs/logo-bruno-IDEAL-COLOR.png" alt="Logo Bruno Placas" class="logo-img">
+    </div>
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
@@ -35,27 +37,27 @@
       <label for="filtroTipo" style="margin-left: 20px;">Filtrar por tipo:</label>
       <select id="filtroTipo" onchange="filtrarPlacas()">
         <option value="todos">Todos</option>
-        <option value="placa">Inverter</option>
-        <option value="display">HW</option>
+        <option value="inverter">Inverter</option>
+        <option value="hw">HW</option>
       </select>
     </div>
 
     <div class="placas-container" id="placasArCondicionado">
-      <div class="placa samsung placa">
+      <div class="placa samsung inverter">
         <a href="produto.html?produto=placa1">
           <img src="imgs/arcond_samsung1.jpg" alt="Samsung">
           <p>Placa Ar Samsung 9000 BTUs</p>
           <p>Calcular Frete</p>
         </a>
       </div>
-      <div class="placa electrolux display">
+      <div class="placa electrolux hw">
         <a href="produto.html?produto=placa2">
           <img src="imgs/arcond_electrolux1.jpg" alt="Electrolux">
           <p>Display Ar Electrolux EcoTurbo</p>
           <p>Calcular Frete</p>
         </a>
       </div>
-      <div class="placa lg placa">
+      <div class="placa lg hw">
         <a href="produto.html?produto=placa3">
           <img src="imgs/arcond_lg1.jpg" alt="LG">
           <p>Placa Ar LG Dual Inverter</p>

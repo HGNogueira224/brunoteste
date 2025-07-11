@@ -13,7 +13,7 @@ header {
 
 header h1 {
   margin: 0;
-  color: #48a9f8;
+  color: #3d9ae7;
 }
 
 nav {
@@ -307,10 +307,31 @@ footer {
   background-color: #f4faff;
   color: #222;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logo-img {
+  height: 200px;
+  width: 200px;
+}
 
 @media (max-width: 768px) {
   header {
     padding: 10px;
+  }
+
+  logo-container {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .logo-img {
+    height: 40px;
   }
 
   nav ul {

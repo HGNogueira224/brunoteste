@@ -15,7 +15,7 @@
         <li><a href="geladeiras.html">Geladeiras</a></li>
         <li><a href="arcondicionado.html">Ar Condicionado</a></li>
         <li><a href="lavaeseca.html">Lava e Seca</a></li>
-        <li><a href="maqlavar.html">Máq. de Lavar</a></li>
+        <li><a href="maqlavar.html">Máquina de Lavar</a></li>
       </ul>
       <div id="lojaBox">
         <select id="lojaSelector" class="estilo-seletor">
@@ -28,16 +28,41 @@
 
   <main>
     <h2 class="titulo-categoria">Placas para Lava e Seca</h2>
-    <div class="placas-container">
-      <!-- Substitua os blocos abaixo pelas placas específicas da categoria -->
-      <div class="placa">
+
+    <div style="text-align: center; margin-bottom: 20px;">
+      <label for="filtroMarca">Filtrar por modelo:</label>
+      <select id="filtroMarca" onchange="filtrarPlacas()">
+        <option value="todos">Todos</option>
+        <option value="samsung">Samsung</option>
+        <option value="electrolux">Electrolux</option>
+        <option value="lg">LG</option>
+        <!-- Adicione mais marcas se quiser -->
+      </select>
+    </div>
+
+    <div class="placas-container" id="placasArCondicionado">
+      <div class="placa samsung">
         <a href="produto.html?produto=placa1">
-          <img src="imgs/exemplo.jpg" alt="Nome da Placa">
-          <p>Placa Nome do Produto</p>
+          <img src="imgs/arcond_samsung1.jpg" alt="Samsung">
+          <p>Placa Ar Samsung 9000 BTUs</p>
           <p>Calcular Frete</p>
         </a>
       </div>
-      <!-- Adicione mais placas conforme necessário -->
+      <div class="placa electrolux">
+        <a href="produto.html?produto=placa2">
+          <img src="imgs/arcond_electrolux1.jpg" alt="Electrolux">
+          <p>Placa Ar Electrolux EcoTurbo</p>
+          <p>Calcular Frete</p>
+        </a>
+      </div>
+      <div class="placa lg">
+        <a href="produto.html?produto=placa3">
+          <img src="imgs/arcond_lg1.jpg" alt="LG">
+          <p>Placa Ar LG Dual Inverter</p>
+          <p>Calcular Frete</p>
+        </a>
+      </div>
+      <!-- Adicione mais blocos com as classes correspondentes -->
     </div>
   </main>
 

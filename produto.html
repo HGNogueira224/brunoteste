@@ -12,6 +12,10 @@
     <nav>
       <ul>
         <li><a href="index.html" onclick="mostrarAba('inicio')">Início</a></li>
+        <li><a href="geladeiras.html" onclick="mostrarAba('geladeiras')">Geladeiras</a></li>
+        <li><a href="arcondicionado.html" onclick="mostrarAba('arcondicionado')">Ar Condicionado</a></li>
+        <li><a href="lavaeseca.html" onclick="mostrarAba('lavaeseca')">Lava e Seca</a></li>
+        <li><a href="maqlavar.html" onclick="mostrarAba('maqlavar')">Máquina de Lavar</a></li>
       </ul>
       <select id="lojaSelector" class="estilo-seletor">
         <option value="loja1">Cascadura - Av. Ernani Cardoso 91</option>
@@ -26,6 +30,7 @@
 
       <div class="produto-info">
         <div id="produtoTexto"></div>
+        <div id="botaoWhatsapp" style="margin-top: 20px;"></div>
 
         <div class="frete-formulario compacto">
           <h4>Calcular frete</h4>
@@ -49,52 +54,42 @@
     const produtos = {
       placa1: {
         nome: "Placa Samsung ww10J",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/ww10J.jpg"
       },
       placa2: {
         nome: "Placa Samsung wf106",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wf106.png"
       },
       placa3: {
         nome: "Placa Samsung ww11k",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/ww11k.jpg"
       },
       placa4: {
         nome: "Placa Lava e seca Samsung wd11m",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wd11m.jpg"
       },
       placa5: {
         nome: "Placa Lava e seca Samsung wd106",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wd106.jpg"
       },
       placa6: {
         nome: "Placa Lava e seca Samsung wd136",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wd136.jpg"
       },
       placa7: {
         nome: "Placa Lava e seca Samsung wd856",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wd856.webp"
       },
       placa8: {
         nome: "Placa Lava e seca Samsung wd854",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wd854.webp"
       },
       placa9: {
         nome: "Placa Lava e seca Samsung wd11j",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wd11j.webp"
       },
       placa10: {
         nome: "Placa Lava e seca Samsung wd10n",
-        preco: "Orçamento via Whatsapp",
         imagem: "imgs/wd10n.webp"
       },
     };
@@ -110,11 +105,21 @@
         `;
         document.getElementById("produtoTexto").innerHTML = `
           <h2>${produto.nome}</h2>
-          <p><strong>Preço:</strong> ${produto.preco}</p>
+        `;
+
+        // Cria o botão do WhatsApp
+        const mensagem = encodeURIComponent(`Olá, gostaria de um orçamento para: ${produto.nome}`);
+        const link = `https://wa.me/5521973100133?text=${mensagem}`;
+        document.getElementById("botaoWhatsapp").innerHTML = `
+          <a href="${link}" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; background-color: #25D366; color: white; padding: 10px 16px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+            <img src="imgs/whatsapp.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+            Realizar orçamento no WhatsApp
+          </a>
         `;
       } else {
         document.getElementById("produtoImagem").innerHTML = ``;
         document.getElementById("produtoTexto").innerHTML = `<p>Produto não encontrado.</p>`;
+        document.getElementById("botaoWhatsapp").innerHTML = ``;
       }
     }
 
